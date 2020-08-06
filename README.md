@@ -5,6 +5,13 @@
 npm install
 ```
 
+## Set your environment variables
+```
+cp .env.local.example .env.local
+
+# Set your Firebase config
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
