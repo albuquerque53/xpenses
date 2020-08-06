@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.1",
     "core-js": "^3.6.5",
+    "firebase": "^7.17.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
