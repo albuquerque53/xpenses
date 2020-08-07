@@ -1,10 +1,20 @@
-$dark: #000;
+$dark: #000 !important;
 $darker: #111;
 $dark-medium: #333;
 $dark-low: #666;
 $light-low: #999;
 $lighter: #ddd;
-$light: #fff;
+$light: #fff !important;
 
 $featured: #387D7A;
 $fatured-dark: #204644;
+
+:root {
+  --dark: #{$dark}; 
+  --darker: #{$darker}; 
+  --dark-medium: #{$dark-medium}; 
+  --dark-low: #{$dark-low}; 
+  --light-low: #{$light-low}; 
+  --lighter: #{$lighter}; 
+  --light: #{$light}; 
+}
