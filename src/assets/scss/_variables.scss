@@ -7,7 +7,7 @@ $lighter: #ddd;
 $light: #fff !important;
 
 $featured: #387D7A;
-$fatured-dark: #204644;
+$featured-dark: #204644;
 
 :root {
   --dark: #{$dark}; 
@@ -16,5 +16,7 @@ $fatured-dark: #204644;
   --dark-low: #{$dark-low}; 
   --light-low: #{$light-low}; 
   --lighter: #{$lighter}; 
-  --light: #{$light}; 
+  --light: #{$light};
+  --featured: #{$featured};
+  --featured-dark: #{$featured-dark};
 }
