@@ -1,31 +1,36 @@
-# xpenses
+<p align="center">
+  <img src="src/assets/xpenses.png">
+ </p>
 
-## Project setup
+# Xpenses
+
+Expense management tool :dollar:
+
+## :building_construction: Project setup:
+
+### :package: First, install the dependencies
 ```
 npm install
 ```
 
-## Set your environment variables
+### :wrench: Set your environment variables
 ```
 cp .env.local.example .env.local
 
 # Set your Firebase config
 ```
 
-### Compiles and hot-reloads for development
+### :globe_with_meridians: Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### :rocket: Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### :pencil2: Lints and fixes files
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
