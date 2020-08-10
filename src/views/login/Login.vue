@@ -1,13 +1,25 @@
 <template>
-  <form class="form-login">
+  <form @submit.prevent="doLogin()" class="form-login">
     <div class="card">
     <img src="../../assets/xpenses.png" alt="Xpenses">
       <div class="card-body">
         <div class="form-group">
-          <input class="form-control" type="text" placeholder="E-mail">
+          <input
+            class="form-control"
+            type="email"
+            placeholder="E-mail"
+            required
+            v-model="email"
+          >
         </div>
         <div class="form-group">
-          <input class="form-control" type="password" placeholder="Password">
+          <input
+            class="form-control"
+            type="password"
+            placeholder="Password"
+            required
+            v-model="password"
+          >
         </div>
         <button class="btn btn-primary btn-block">Login</button>
       </div>
@@ -17,7 +29,18 @@
 
 <script>
 export default {
-
+  name: 'Login',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    doLogin () {
+      console.log('Submit')
+    }
+  }
 }
 </script>
 
