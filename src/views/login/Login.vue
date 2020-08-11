@@ -37,8 +37,16 @@ export default {
     }
   },
   methods: {
-    doLogin () {
-      console.log('Submit')
+    async doLogin () {
+      const { email, password } = this
+
+      try {
+        const res = await this.$firebase.auth().signInWithEmailAndPassword(email, password)
+
+        console.log(res)
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }
