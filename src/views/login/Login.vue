@@ -43,11 +43,20 @@ export default {
       try {
         const res = await this.$firebase.auth().signInWithEmailAndPassword(email, password)
 
-        console.log(res)
+        window.uid = res.user.uid
+
+        this.$router.push({ name: 'home' })
       } catch (err) {
         console.log(err)
       }
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      if (window.uid) {
+        vm.$router.push({ name: 'home' })
+      }
+    })
   }
 }
 </script>

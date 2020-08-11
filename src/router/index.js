@@ -6,18 +6,26 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home')
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: () => import(/* webpackChunkName: "login" */ '../views/login/Login')
   }
 ]
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (!window.uid && to.name !== 'login') {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
 })
 
 export default router

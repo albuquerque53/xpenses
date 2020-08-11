@@ -10,18 +10,13 @@ export default {
 
   data () {
     return {
-      visible: false
+      visible: true
     }
   },
 
   created () {
-    this.$root.$on('Spinner::change', this.changeSpinner)
-  },
-
-  methods: {
-    changeSpinner () {
-      this.visible = !this.visible
-    }
+    this.$root.$on('Spinner::show', () => { this.visible = true })
+    this.$root.$on('Spinner::hide', () => { this.visible = false })
   }
 }
 </script>
