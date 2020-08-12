@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav class="nav flex-column">
+  <nav class="nav flex-column justify-content-between">
+    <div>
       <router-link
         exact
         exact-active-class="active"
@@ -12,12 +12,19 @@
         <i class="fa" :class="`fa-${route.meta.icon}`"></i>
         {{ route.meta.title }}
       </router-link>
-    </nav>
-  </div>
+    </div>
+    <layout-logout />
+  </nav>
 </template>
 
 <script>
+import LayoutLogout from './LayoutLogout'
+
 export default {
+  components: {
+    LayoutLogout
+  },
+
   computed: {
     routerLinks () {
       return this.$router.options.routes.filter(route => route.name !== 'login')
