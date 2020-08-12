@@ -1,5 +1,6 @@
 <template>
   <nav class="nav flex-column justify-content-between">
+
     <div>
       <router-link
         exact
@@ -7,22 +8,27 @@
         class="nav-link"
         v-for="(route, index) in routerLinks"
         :key="index"
-        :to="{ name: route.name }"
-      >
+        :to="{ name: route.name }">
+
         <i class="fa" :class="`fa-${route.meta.icon}`"></i>
         {{ route.meta.title }}
       </router-link>
+      <hr>
+      <layout-new-expense />
     </div>
     <layout-logout />
+
   </nav>
 </template>
 
 <script>
 import LayoutLogout from './LayoutLogout'
+import LayoutNewExpense from './LayoutNewExpense'
 
 export default {
   components: {
-    LayoutLogout
+    LayoutLogout,
+    LayoutNewExpense
   },
 
   computed: {
