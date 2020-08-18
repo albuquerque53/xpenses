@@ -140,13 +140,23 @@ export default {
 
         ref.child(id).set(payload, err => {
           if (err) {
-            console.error(err)
+            this.$root.$emit('Notification::show', {
+              type: 'danger',
+              message: 'Oops! There was a problem, please try again'
+            })
           } else {
+            this.$root.$emit('Notification::show', {
+              type: 'success',
+              message: 'Successfully added!'
+            })
             this.changeModal(false)
           }
         })
       } catch (err) {
-        console.error(err)
+        this.$root.$emit('Notification::show', {
+          type: 'danger',
+          message: 'Oops! There was a problem, please try again'
+        })
       } finally {
         this.$root.$emit('Spinner::hide')
       }

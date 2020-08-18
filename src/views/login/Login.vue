@@ -47,7 +47,25 @@ export default {
 
         this.$router.push({ name: 'home' })
       } catch (err) {
-        console.log(err)
+        let message = ''
+
+        switch (err.code) {
+          case 'auth/user-not-found':
+            message = 'It was not possible find that user.'
+            break
+          case 'auth/wrong-password':
+            message = 'Bad passprase, try again'
+            break
+          default:
+            message = 'Incorrect credentials, please try again'
+        }
+
+        this.$root.$emit('Notification::show', {
+          type: 'danger',
+          message
+        })
+        this.email = ''
+        this.password = ''
       }
     }
   },
