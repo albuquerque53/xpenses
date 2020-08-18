@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <base-spinner />
+    <layout-notification />
 
     <div class="container-fluid" v-if="islogged">
       <div class="row">
@@ -22,13 +23,15 @@
 <script>
 import BaseSpinner from './components/global/BaseSpinner'
 import LayoutNavigation from './components/layout/LayoutNavigation'
+import LayoutNotification from './components/layout/LayoutNotification'
 
 export default {
   name: 'App',
 
   components: {
     BaseSpinner,
-    LayoutNavigation
+    LayoutNavigation,
+    LayoutNotification
   },
 
   data () {
