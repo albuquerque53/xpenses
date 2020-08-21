@@ -13,6 +13,7 @@
         <div class="col">
           <router-view />
         </div>
+
       </div>
     </div>
 

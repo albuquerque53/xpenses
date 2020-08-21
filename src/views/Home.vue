@@ -1,11 +1,32 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+
+  data () {
+    return {
+      expenses: []
+    }
+  },
+
+  created () {
+    this.getData()
+  },
+
+  methods: {
+    getData () {
+      const ref = this.$firebase.database().ref(`/${window.uid}`)
+      ref.on('value', data => {
+        const values = data.val()
+
+        this.expenses = values
+        console.log(this.expenses)
+      })
+    }
+  }
 }
 </script>
