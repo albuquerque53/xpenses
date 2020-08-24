@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-6 home-box">
         <small>You Spent:</small>
-        <div class="money">R$ 120,00</div>
+        <div class="money">R$ {{ totals.totalSpent }}</div>
         <small>In purchases</small>
       </div>
       <div class="col-6 home-box">
@@ -38,13 +38,32 @@ export default {
     this.getData()
   },
 
+  computed: {
+    totals () {
+      const { expenses: exp } = this
+      const values = {
+        totalSpent: 0,
+        average: 0,
+        largest: {},
+        lowest: {}
+      }
+
+      if (exp.length) {
+        values.totalSpent = exp.map(e => +e.value)
+          .reduce((acc, cur) => acc + cur, 0)
+      }
+
+      return values
+    }
+  },
+
   methods: {
     getData () {
       const ref = this.$firebase.database().ref(`/${window.uid}`)
       ref.on('value', data => {
         const values = data.val()
 
-        console.log(Object.keys(values).map(i => values[i]))
+        this.expenses = Object.keys(values).map(i => values[i])
       })
     }
   }
