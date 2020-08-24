@@ -12,12 +12,12 @@
       </div>
       <div class="col-6 home-box">
         <small>The largest expense was:</small>
-        <div class="money">R$ 90,00</div>
+        <div class="money">R$ {{ totals.largest.value }}</div>
         <small>On 12/07/2020</small>
       </div>
       <div class="col-6 home-box">
         <small>The lowest expense was:</small>
-        <div class="money">R$ 4,00</div>
+        <div class="money">R$ {{ totals.lowest.value }}</div>
         <small>On 10/07/2020</small>
       </div>
     </div>
@@ -53,6 +53,9 @@ export default {
           .reduce((acc, cur) => acc + cur, 0)
 
         values.average = values.totalSpent / exp.length
+
+        values.largest = exp.sort((a, b) => +b.value - +a.value)[0]
+        values.lowest = exp.sort((a, b) => +a.value - +b.value)[0]
       }
 
       return values
