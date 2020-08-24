@@ -8,7 +8,7 @@
       </div>
       <div class="col-6 home-box">
         <small>The average expenditure is:</small>
-        <div class="money">R$ 12,00</div>
+        <div class="money">R$ {{ totals.average }}</div>
       </div>
       <div class="col-6 home-box">
         <small>The largest expense was:</small>
@@ -51,6 +51,8 @@ export default {
       if (exp.length) {
         values.totalSpent = exp.map(e => +e.value)
           .reduce((acc, cur) => acc + cur, 0)
+
+        values.average = values.totalSpent / exp.length
       }
 
       return values
