@@ -13,12 +13,12 @@
       <div class="col-6 home-box">
         <small>The largest expense was:</small>
         <div class="money" v-currency-format="totals.largest.value" />
-        <small>On 12/07/2020</small>
+        <small v-date-format="totals.largest.createdAt" />
       </div>
       <div class="col-6 home-box">
         <small>The lowest expense was:</small>
         <div class="money" v-currency-format="totals.lowest.value" />
-        <small>On 10/07/2020</small>
+        <small v-date-format="totals.lowest.createdAt" />
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ export default {
     justify-content: center;
     font-size: 30pt;
     small {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     .money {
       color: var(--featured);
