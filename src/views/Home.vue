@@ -3,21 +3,21 @@
     <div class="row">
       <div class="col-6 home-box">
         <small>You Spent:</small>
-        <div class="money">R$ {{ totals.totalSpent }}</div>
+        <div class="money" v-currency-format="totals.totalSpent" />
         <small>In purchases</small>
       </div>
       <div class="col-6 home-box">
         <small>The average expenditure is:</small>
-        <div class="money">R$ {{ totals.average }}</div>
+        <div class="money" v-currency-format="totals.average" />
       </div>
       <div class="col-6 home-box">
         <small>The largest expense was:</small>
-        <div class="money">R$ {{ totals.largest.value }}</div>
+        <div class="money" v-currency-format="totals.largest.value" />
         <small>On 12/07/2020</small>
       </div>
       <div class="col-6 home-box">
         <small>The lowest expense was:</small>
-        <div class="money">R$ {{ totals.lowest.value }}</div>
+        <div class="money" v-currency-format="totals.lowest.value" />
         <small>On 10/07/2020</small>
       </div>
     </div>
